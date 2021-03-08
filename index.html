@@ -17,14 +17,14 @@
 		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
 		<script>
 
-		async function predict(image){
+		async function predict(){
 		
 		  const model = await tf.loadLayersModel('model/model.json');
 
 			const im = new Image()
 			im.src = "data/scissor.png";
 			im.onload = () => {
-				const a = tf.browser.fromPixels(im, 4)
+				const a = tf.browser.fromPixels(im, 3).print();
 				console.log(a.shape)
 			}
 			
