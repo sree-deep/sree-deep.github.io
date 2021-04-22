@@ -1,39 +1,35 @@
 <html>
-	
+
 	<head>
-	
-		<style>
-		
-		h1{
-		text-align:center;
-		}
-		
-		</style>
-		
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+		<title>Teachable Machine!!!</title>
 	</head>
 
 
-
 	<body>
-	
-		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
-	
-		<script>
-
-			async function predict(){
-			
-			  const model = await tf.loadLayersModel('model/model.json');
-
-			}
-			
-			predict();
-			
-		</script>
 		
-	
-		<h1> 😀 Hello World! </h1>
-	
+		
+			<h1>Teach your Machine Learning Algo!! 😊 </h1>
+			
+			<br>
+			<p> Instructions: </p>
+			<ul>
+				<li> Allow webcam access (duhh!!) </li>
+				<li> Click on each "Add Image" button, to capture images from webcam to train your algorithm. </li>
+				<li> As soon as you add images, your algo starts classifying stuff seen on your webcam!! 🥳</li>
+			</ul>
+			<div id="console"></div>
+			
+			<video autoplay playsinline muted width="224" height="224" id="webcam"></video><br><br>
+			
+			<button id="image1">Add Image 1</button>
+			<button id="image2">Add Image 2</button>
+			<button id="image3">Add Image 3</button>
+		
+		<script src="index.js"></script>
+		
 	</body>
-	
 
 </html>
