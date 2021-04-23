@@ -64,8 +64,8 @@ async function app(){
 			
 			document.getElementById("console").innerText= 
 			`
-			prediction: ${classes[result.label]}\n
-			probability: ${result.confidences[result.label]}
+			Prediction: ${classes[result.label]}\n
+			Probability: ${result.confidences[result.label]}
 			`
 			if(result.label==0)
 			{

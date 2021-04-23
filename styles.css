@@ -3,7 +3,7 @@ body {
 }
 
 .imagediv{
-	padding: 50px 100px 100px 100px;
+	padding: 50px 10px 50px 30px;
 }
 
 p{
@@ -23,4 +23,9 @@ h1{
 #centerall
 {
 	padding-left:400px;
+}
+
+#webcam
+{
+	padding-left:100px;
 }
