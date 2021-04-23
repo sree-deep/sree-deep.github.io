@@ -1,9 +1,26 @@
 body {
   font-family: system-ui;
-
 }
 
-#instruct{
-	font-family: system-ui;
-	font-size:18px;
+.imagediv{
+	padding: 50px 100px 100px 100px;
+}
+
+p{
+	padding-left:40px; 
+	font-family: "Lucida Console", monospace;
+
+}
+ul{
+	padding: 0px 0px 40px 50px;
+	font-family: "Lucida Console", monospace;
+}
+
+h1{
+	padding-top:10px;
+}
+
+#centerall
+{
+	padding-left:400px;
 }

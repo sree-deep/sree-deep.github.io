@@ -2,9 +2,12 @@
 
 	<head>
 		<link rel="stylesheet" href="styles.css">
+		
 		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+		
 		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+		
 		<title>Teachable Machine</title>
 	</head>
 
@@ -12,34 +15,45 @@
 	<body>
 		
 			<center>
-				<h1>Image Classifier, Teach Your ML Algo!! 😊 </h1>
+				<h1>Move It With Gestures!! 😊 </h1>
 			</center>
 			
 			
 			<!--Instructions-->
 			<br>
-			
 			<div id="instruct">
-			<p> Instructions </p>
+			<p> INSTRUCTIONS </p>
 			<ul >
 				<li> Allow webcam access (duhh!!) </li>
-				<li> Click on each "Add Image" button, to capture images from webcam to train your algorithm. </li>
-				<li> As soon as you add images, your algo starts classifying stuff seen on your webcam!! 🥳</li>
+				<li> Click on "Add Right/Left/Stop Gesture" buttons to capture gestures through webcam. </li>
+				<li> As soon as you click on "Start", you can move your little mushroom with your gestures 🥳 🍄</li>
 			</ul>
 			</div>
 			
 			<!--output-->
+			<div id="centerall">
 			<div id="console"></div>
 			
 			<!--webcam-->
 			<video autoplay playsinline muted width="224" height="224" id="webcam"></video><br><br>
 			
 			<!--buttons-->
-			<button id="image1">Add Image 1</button>
-			<button id="image2">Add Image 2</button>
-			<button id="image3">Add Image 3</button>
+			<button id="image1">Add Right Gesture</button>
+			<button id="image2">Add Left Gesture</button>
+			<button id="image3">Add Stop Gesture</button>
+			<button id="start">Start</button>
+			</div>
+			
+			<br>
+			<div class="imagediv">
+			<center>
+			<image id="myImage" height="100" width="100" src="mushroom.png"></image>
+			</center>
+			</div>
 		
 		<script src="index.js"></script>
+		
+		
 		
 	</body>
 

@@ -31,7 +31,24 @@ async function app(){
 	document.getElementById("image2").addEventListener("click",()=> addExample(1))
 	document.getElementById("image3").addEventListener("click",()=> addExample(2))
 	
-	while(true)
+    function init() {
+               imgObj = document.getElementById('myImage');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+            }
+            function moveRight() {
+               imgObj.style.left = parseInt(imgObj.style.left) + 5 + 'px';
+            }
+			
+			function moveLeft() {
+               imgObj.style.left = parseInt(imgObj.style.left) - 5 + 'px';
+            }
+	init() 
+
+		
+	async function startmoving()
+	{
+		while(true)
 	{
 		if(classifier.getNumClasses() > 0)
 		{
@@ -41,19 +58,35 @@ async function app(){
 			
 			const result = await classifier.predictClass(activation)
 			
-			const classes = ["Image 1","Image 2","Image 3"]
+			const classes = ["Right","left","Stop"]
 			
 			document.getElementById("console").innerText= 
 			`
 			prediction: ${classes[result.label]}\n
 			probability: ${result.confidences[result.label]}
 			`
-			
+			if(result.label==0)
+			{
+				moveRight()
+			}
+			else if(result.label==1)
+			{
+				moveLeft()
+			}
+			else if(result.label==2)
+			{
+				init()
+			}
 			img.dispose()
 		}
 		
 		await tf.nextFrame()
 	}
+	}
+	document.getElementById("start").addEventListener("click",()=> startmoving())
+	
 }
 
+	
 app()
+
