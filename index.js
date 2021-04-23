@@ -31,6 +31,8 @@ async function app(){
 	document.getElementById("image2").addEventListener("click",()=> addExample(1))
 	document.getElementById("image3").addEventListener("click",()=> addExample(2))
 	
+	
+	
     function init() {
                imgObj = document.getElementById('myImage');
                imgObj.style.position= 'relative'; 
